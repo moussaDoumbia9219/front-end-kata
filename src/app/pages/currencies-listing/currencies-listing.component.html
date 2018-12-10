@@ -1,1 +1,15 @@
 <h1>Availables Currencies</h1>
+<div class="row">
+<div [hidden]='!competition' class="col-md-2 card" *ngFor="let competition of currencies">
+        <div class="card-body">
+          <ul >
+            <li><b>AREA</b>:
+              <br> {{competition?.area?.name}} </li>
+            <li> <b>SEASON</b> :<br> {{competition?.currentSeason?.startDate}} <br>  {{competition?.currentSeason?.endDate}} </li>
+            <li> <b>MATCH DAY</b> : {{competition?.currentSeason?.currentMatchday}}  </li>
+          </ul>
+
+        </div>
+
+</div>
+</div>
