@@ -12,6 +12,8 @@ export class CurrencyListingComponent implements OnInit {
   currencies: Array<any>;
   allowedCompetitions : Array<any>;
   pageItems: any;
+  filterData: any;
+  filterField: any;
   constructor(private currencySerivce: CurrenciesService) {
     this.p = 1;
     this.pageItems = 50;
