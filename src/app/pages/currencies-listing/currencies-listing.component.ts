@@ -8,11 +8,13 @@ import { CurrenciesService } from './../../service/currencies.service';
 })
 
 export class CurrencyListingComponent implements OnInit {
-
+  p: number
   currencies: Array<any>;
   allowedCompetitions : Array<any>;
-
+  pageItems: any;
   constructor(private currencySerivce: CurrenciesService) {
+    this.p = 1;
+    this.pageItems = 50;
     this.currencies = [];
     this.allowedCompetitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019,2021]
   }
@@ -32,5 +34,9 @@ export class CurrencyListingComponent implements OnInit {
         this.currencies = [];
       }
     );
+  }
+
+  changeTableLength(value) {
+    this.pageItems = value;
   }
 }
