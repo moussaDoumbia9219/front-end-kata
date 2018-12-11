@@ -1,0 +1,20 @@
+<h1>{{currency?.name}} </h1>
+
+<div class="row">
+<div >
+        <div class="card-body">
+          <ul >
+            <li><b>AREA</b>: {{currency?.area.name}}</li>
+            <li> <b>SEASON</b>: {{currency?.currentSeason?.startDate}} - {{currency?.currentSeason?.startDate}} </li>
+            <li> <b>MATCH DAY</b> {{currency?.currentSeason?.currentMatchday}} </li>
+            <li> <b>SEASON WINNER</b>: {{currency?.currentSeason?.winner?.name}}</li>
+
+          </ul>
+
+        </div>
+
+</div>
+<p>
+    <a (click)="backClicked()"> GO BACK</a>
+</p>
+</div>

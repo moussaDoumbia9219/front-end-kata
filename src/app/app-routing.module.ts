@@ -8,6 +8,7 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {path: 'home', loadChildren: './pages/currencies-listing/currencies-listing.module#CurrencyListingModule'},
+      {path: 'currency/:id', loadChildren: './pages/currencides-detail/currencies-detail.module#CurrenciesDetailModule'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]
   }

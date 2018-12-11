@@ -1,3 +1,5 @@
+import { CurrenciesService } from './../../service/currencies.service';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -6,9 +8,9 @@ import { CurrenciesDetailRoutingModule } from './currencies-detail.routing';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [CurrenciesDetailRoutingModule, HttpClientModule, CommonModule],
+  imports: [CurrenciesDetailRoutingModule, HttpClientModule, CommonModule, RouterModule],
   exports: [],
   declarations: [CurrenciesDetailComponent],
-  providers: [],
+  providers: [CurrenciesService],
 })
 export class CurrenciesDetailModule { }

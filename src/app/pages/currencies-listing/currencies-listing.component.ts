@@ -10,9 +10,11 @@ import { CurrenciesService } from './../../service/currencies.service';
 export class CurrencyListingComponent implements OnInit {
 
   currencies: Array<any>;
+  allowedCompetitions : Array<any>;
 
   constructor(private currencySerivce: CurrenciesService) {
     this.currencies = [];
+    this.allowedCompetitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019,2021]
   }
 
   ngOnInit() {
@@ -23,6 +25,8 @@ export class CurrencyListingComponent implements OnInit {
     this.currencySerivce.getCompetitions().subscribe(
       data => {
         this.currencies = data.competitions;
+        let res = this.currencies.filter(f => this.allowedCompetitions.includes(f.id));
+         this.currencies = res;
       },
       error => {
         this.currencies = [];

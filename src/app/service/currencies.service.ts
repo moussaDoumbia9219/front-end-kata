@@ -41,7 +41,7 @@ export class CurrenciesService {
   getOneCompetition(id): Observable<any> {
     const headers = new HttpHeaders().set('X-Auth-Token', this.apiKeys);
 
-    return this.http.get(this.baseUrl + this.collection + '/' + id, {headers: headers}).pipe(
+    return this.http.get(this.baseUrl + this.collection + '2000', {headers: headers}).pipe(
       catchError( err => {
         return throwError(err);
       })
