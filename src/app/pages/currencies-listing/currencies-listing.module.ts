@@ -1,3 +1,4 @@
+import { AreaPipePipe } from './../../area-pipe.pipe';
 import { CurrenciesService } from './../../service/currencies.service';
 import { CurrencyListingRoutingModule } from './currencies-listing.routing';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [CurrencyListingRoutingModule, HttpClientModule, CommonModule, NgxPaginationModule, FormsModule],
   exports: [],
-  declarations: [CurrencyListingComponent],
+  declarations: [CurrencyListingComponent, AreaPipePipe],
   providers: [CurrenciesService],
 })
 export class CurrencyListingModule { }

@@ -5,24 +5,18 @@
   </div>
   <div class="col-xs-4">
       <select style='width: 100%' class="form-control" name='filterField' [(ngModel)]="filterField"  >
-          <option selected [value]="10">
-              <strong>SELECT FIELD TO SEARCH</strong>
-            </option>
-        <option  [value]="10">
+        <option selected data-default  [value]="'area'">
               <strong>AREA</strong>
             </option>
-            <option   [value]="25">
+            <option selected data-default  [value]="'currentSeason'">
               <strong>MATCH DAY</strong>
             </option>
       </select>
   </div>
-  <div class="col-xs-2">
-    <button class='btn btn-default'>SEARCH</button>
-  </div>
 </div>
 <br>
 <div class="row">
-<div [hidden]='!competition' class="col-lg-2 col-sm-3 col-xs-5 card" *ngFor="let competition of currencies | paginate: {id:'currency-list', itemsPerPage: pageItems, currentPage: p }" [routerLink]="['/currency', competition?.id]">
+<div [hidden]='!competition' class="col-lg-2 col-sm-3 col-xs-5 card" *ngFor="let competition of currencies | areaPipe: filterField : filterData  | paginate: {id:'currency-list', itemsPerPage: pageItems, currentPage: p }" [routerLink]="['/currency', competition?.id]">
         <div class="card-body">
           <ul >
             <li><b>AREA</b>:

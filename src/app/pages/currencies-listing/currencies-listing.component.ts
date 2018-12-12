@@ -18,7 +18,8 @@ export class CurrencyListingComponent implements OnInit {
     this.p = 1;
     this.pageItems = 50;
     this.currencies = [];
-    this.allowedCompetitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019,2021]
+    this.allowedCompetitions = [2000, 2001, 2002, 2003, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2021];
+    this.filterField = 'area';
   }
 
   ngOnInit() {
